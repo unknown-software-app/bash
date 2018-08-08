@@ -40,8 +40,8 @@ if [ $? -eq 0 ] ; then
 	sudo docker tag $IMAGE_NAME:current $IMAGE_NAME:rollback
 fi
 
-# tag latest image as current
-sudo docker tag $IMAGE_NAME:latest $IMAGE_NAME:current
+# tag $DOCKER_TAG image as current
+sudo docker tag $IMAGE_NAME:$DOCKER_TAG $IMAGE_NAME:current
 
 # run docker container with new image.
 sudo docker run -d \
